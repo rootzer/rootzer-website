@@ -1,13 +1,13 @@
 "use client"
 
-import { Facebook, Twitter, Github, Linkedin } from 'lucide-react'
+import { Facebook, Twitter, Github, Linkedin, X } from 'lucide-react'
 import { useLanguage } from '@/contexts/LanguageContext'
 
 const socialLinks = [
-  { icon: Facebook, href: 'https://facebook.com' },
-  { icon: Twitter, href: 'https://twitter.com' },
-  { icon: Github, href: 'https://github.com' },
-  { icon: Linkedin, href: 'https://linkedin.com' },
+  //{ icon: Facebook, href: 'https://facebook.com' },
+  //{ icon: X, href: 'https://x.com' },
+  { icon: Github, href: 'https://github.com/rootzer' },
+  //{ icon: Linkedin, href: 'https://linkedin.com' },
 ]
 
 export default function Footer() {
