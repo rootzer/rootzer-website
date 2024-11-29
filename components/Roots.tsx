@@ -4,7 +4,7 @@ import { useState } from 'react'
 import Image from 'next/image'
 import { useLanguage } from '@/contexts/LanguageContext'
 import { Button } from '@/components/ui/button'
-import { Card, CardContent, CardDescription, CardHeader, CardTitle, CardFooter } from '@/components/ui/card'
+import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter } from '@/components/ui/card'
 import { Github, Download } from 'lucide-react'
 
 const roots = [
@@ -86,24 +86,24 @@ export default function Roots() {
     <section id="raizes" className="py-12 pt-24 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100">
       <div className="container mx-auto px-4">
         <h2 className="text-3xl font-bold text-center mb-8">{t('roots.title')}</h2>
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 mb-8">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2 sm:gap-4 mb-8">
           {roots.map((root) => (
             <Card 
               key={root.id} 
               className={`cursor-pointer transition-all duration-300 bg-white dark:bg-gray-700 ${selectedRoot.id === root.id ? 'ring-2 ring-primary' : ''}`}
               onClick={() => setSelectedRoot(root)}
             >
-              <CardHeader className="p-4">
+              <CardHeader className="p-2 sm:p-4">
                 <Image
                   src={root.image}
                   alt={root.name}
                   width={100}
                   height={100}
-                  className="rounded-lg mx-auto"
+                  className="rounded-lg mx-auto w-8 h-8 sm:w-16 sm:h-16 md:w-24 md:h-24"
                 />
               </CardHeader>
-              <CardContent className="p-4 pt-0">
-                <CardTitle className="text-center text-sm">{root.name}</CardTitle>
+              <CardContent className="p-2 sm:p-4 pt-0">
+                <CardTitle className="text-center text-xs sm:text-sm">{root.name}</CardTitle>
               </CardContent>
             </Card>
           ))}
