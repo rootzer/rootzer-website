@@ -23,6 +23,7 @@ export default function Menu() {
   const { theme, toggleTheme } = useTheme()
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [isMobile, setIsMobile] = useState(false)
+  const [isThemeButtonDisabled, setIsThemeButtonDisabled] = useState(false);
 
   useEffect(() => {
     const checkIfMobile = () => {
@@ -56,6 +57,14 @@ export default function Menu() {
     smoothScroll(e, href.slice(1))
     setIsMenuOpen(false)
   }
+
+  const handleThemeToggle = () => {
+    toggleTheme();
+    setIsThemeButtonDisabled(true);
+    setTimeout(() => {
+      setIsThemeButtonDisabled(false);
+    }, 500);
+  };
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-white dark:bg-gray-800 shadow-md">
@@ -101,12 +110,13 @@ export default function Menu() {
             ))}
           </ul>
         </nav>
-        <div className="flex items-center space-x-2">
+        <div className="flex items-center space-x-4">
           <Button 
             variant="outline" 
             size="icon" 
-            onClick={toggleTheme}
-            className="bg-background text-foreground border-border"
+            onClick={handleThemeToggle}
+            disabled={isThemeButtonDisabled}
+            className="bg-background border-slate-800 dark:border-slate-300 hover:bg-slate-700 hover:text-slate-100 dark:bg-slate-700 dark:text-slate-100 dark:hover:bg-slate-100 dark:hover:text-slate-900 text-foreground"
           >
             {theme === 'light' ? <Moon className="h-4 w-4" /> : <Sun className="h-4 w-4" />}
           </Button>
@@ -115,7 +125,7 @@ export default function Menu() {
               <Button 
                 variant="outline" 
                 size="icon"
-                className="bg-background text-foreground border-border"
+                className="bg-background border-slate-800 dark:border-slate-300 hover:bg-slate-700 hover:text-slate-100 dark:bg-slate-700 dark:text-slate-100 dark:hover:bg-slate-500 dark:hover:text-slate-900 text-foreground"
               >
                 <Globe className="h-4 w-4" />
               </Button>

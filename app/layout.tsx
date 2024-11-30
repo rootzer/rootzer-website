@@ -7,8 +7,8 @@ import { ThemeProvider } from '@/contexts/ThemeContext'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Open Source Landing Page',
-  description: 'A landing page for an open source project',
+  title: 'Rootzer Project',
+  description: 'Good Roots for Good Projects',
 }
 
 export default function RootLayout({

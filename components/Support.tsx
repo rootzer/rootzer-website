@@ -50,7 +50,7 @@ export default function Support() {
               href="mailto:contato@seuprojeto.com" 
               className="text-blue-600 dark:text-blue-400 hover:underline text-lg font-medium"
             >
-              contato@seuprojeto.com
+              miguelmcontato@gmail.com
             </a>
           </div>
         </div>
